@@ -1,12 +1,12 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./components/Home.vue";
+import Home from "@/components/Home";
+import Meetups from "@/components/Meetup/Meetups";
+import CreateMeetup from "@/components/Meetup/CreateMeetup";
+import Profile from "@/components/User/Profile";
+import Signup from "@/components/User/Signup";
+import Signin from "@/components/User/Signin";
 import Meetup from "@/components/Meetup/Meetup";
-import Meetups from "./components/Meetup/Meetups.vue";
-import CreateMeetup from "./components/Meetup/CreateMeetup.vue";
-import Profile from "./components/User/Profile.vue";
-import SignIn from "./components/User/Signin.vue";
-import SignUp from "./components/User/Signup.vue";
 
 Vue.use(Router);
 
@@ -14,7 +14,7 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
+      name: "Home",
       component: Home
     },
     {
@@ -30,6 +30,7 @@ export default new Router({
     {
       path: "/meetups/:id",
       name: "Meetup",
+      props: true,
       component: Meetup
     },
     {
@@ -38,14 +39,14 @@ export default new Router({
       component: Profile
     },
     {
-      path: "/signin",
-      name: "Signin",
-      component: SignIn
-    },
-    {
       path: "/signup",
       name: "Signup",
-      component: SignUp
+      component: Signup
+    },
+    {
+      path: "/signin",
+      name: "Signin",
+      component: Signin
     }
   ],
   mode: "history"

@@ -32,23 +32,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      meetups: [
-        {
-          imageUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/4/47/New_york_times_square-terabass.jpg",
-          id: "afajfjadfaadfa323",
-          title: "New York"
-        },
-        {
-          imageUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/7/7a/Paris_-_Blick_vom_gro%C3%9Fen_Triumphbogen.jpg",
-          id: "aadsfhbkhlk1241",
-          title: "Paris"
-        }
-      ]
-    };
+  computed: {
+    meetups() {
+      return this.$store.getters.featuredMeetups;
+    }
   },
   methods: {
     onLoadMeetup(id) {
@@ -66,8 +53,5 @@ export default {
   color: white;
   font-size: 2em;
   padding: 20px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  text-align: center;
 }
 </style>
